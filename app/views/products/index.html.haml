@@ -1,4 +1,5 @@
 %p
 - @products.each do |product|
 	= link_to product.name, product_path(product)
+	= image_tag product.product_image.url(:thumb)
 	= product.price

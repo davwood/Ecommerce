@@ -33,10 +33,14 @@ describe 'products' do
 			fill_in 'Name', with: 'Hoy'
 			fill_in 'Description', with: 'Live the olympic dream'
 			fill_in 'Price', with: 220.00
-			fill_in 'Image', with: 'link'
 
-			click_link 'Add New Product'
-			expect(page).to have_css 'img'
+			page.attach_file('product[product_image]', 'spec/helpers/images/pinkbike.jpg')
+
+			click_button 'Add New Product'
+
+			expect(page).to have_content 'Live the olympic dream'
+			expect(page).to have_css 'img[src*="pinkbike.jpg"]'
+			# expect(page).should have_attached_file :pinkbike
 		end	
 
 		it 'should be able to update details' do
@@ -48,6 +52,13 @@ describe 'products' do
 			click_button 'Update'
 
 			expect(page).to have_content 'Latest model now available'
+		end
+
+
+		it 'should have an attached file' do
+			Product.create :name => 'Hoy', :description => 'Live the Olympic dream', :price => 300, :product_image => File.open(Rails.root.join("spec", "helpers/images", "pinkbike.jpg"))
+			visit '/'
+			expect(page).to have_css 'img[src*="pinkbike.jpg"]'
 		end
 
 
