@@ -1,0 +1,10 @@
+%p
+= form_for @product, :url => products_path, :html => { :multipart => true } do |f|
+	= f.label :name 
+	= f.text_field :name
+	= f.label :description 
+	= f.text_area :description
+	= f.label :price
+	= f.text_field :price
+	= f.file_field :product_image
+	= f.submit 'Add New Product'
