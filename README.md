@@ -9,7 +9,7 @@ To build an ecommerce site using various gems and the Stripe api for payment pro
 </ul>
 <h4>Technical Configuration</h4>
 <ul>
-<li>Languages: Ruby, Haml, CSS/li>
+<li>Languages: Ruby, Haml, CSS</li>
 <li>Database - PosgreSQL</li>
 <h3>Technical Configuration</h3>
 <ul>
