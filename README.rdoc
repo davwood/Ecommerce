@@ -1,28 +1,31 @@
-== README
+This application is written in Ruby 2.0 using Rails 4.
+<h4>Objective</h4>
+To build an ecommerce site using various gems and the Stripe api for payment processing.
+<h4>Requirements</h4>
+<ul>
+<li>Users can browse products, add products to a shopping cart and checkout.</li>
+<li>Administrative users can create, update and delete products.</li>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+</ul>
+<h4>Technical Configuration</h4>
+<ul>
+<li>Languages: Ruby, Haml, CSS/li>
+<li>Database - PosgreSQL</li>
+<li>Gems
+  <ul>
 
-Things you may want to cover:
+  <li>capybara</li>
+  <li>haml</li>
 
-* Ruby version
+  <li>localtunnel</li>
+  <li>shotgun</li>
+  <li>cucumber</li>
 
-* System dependencies
+</ul>
+<h4>Contributors</h4>
+<ul>
+<li><a href="https://github.com/margOnline">Margo Urey</a>
+</li>
+</ul>
+<h4>Next Steps</h4>
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
