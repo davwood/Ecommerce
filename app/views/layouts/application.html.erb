@@ -55,6 +55,7 @@
               <li class="active"><%= link_to "Sign up", new_user_registration_path %></li>
               <li class="active"><%= link_to "Sign in", new_user_session_path %></li>
           <% end %>
+              <li class="active"><%= link_to "My Cart", cart_path(current_cart) %></li> 
           </ul>
         </div>
       </div>
