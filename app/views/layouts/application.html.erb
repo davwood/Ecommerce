@@ -46,11 +46,15 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/">Dave's Bike Store</a>
-        <div class="nav-collapse collapse navbar-responsive-collapse">
+        
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+          <% if current_user %>
+              <li class="active"><%= link_to "Sign out", session_destroy_path %></li>
+          <% else %>
+              <li class="active"><%= link_to "Sign up", new_user_registration_path %></li>
+              <li class="active"><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
           </ul>
         </div>
       </div>
@@ -60,6 +64,8 @@
       <div class="row">
         <div class="col-lg-9">
           <%= bootstrap_flash %>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
           <div class='item_count'>
             <%= pluralize current_cart.count, 'item' %>
           </div>
