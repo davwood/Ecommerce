@@ -11,16 +11,22 @@ To build an ecommerce site using various gems and the Stripe api for payment pro
 <ul>
 <li>Languages: Ruby, Haml, CSS/li>
 <li>Database - PosgreSQL</li>
+<h3>Technical Configuration</h3>
+<ul>
+<li>Database - PosgreSQL</li>
 <li>Gems
   <ul>
+  <li>Paperclip</li>
+  <li>Shoulda</li>
+  <li>FactoryGirl</li>
+  <li>Devise</li>
+  <li>Rspec-rails</li>
+  <li>Capybara</li>
+  <li>Haml</li>
 
-  <li>capybara</li>
-  <li>haml</li>
-
-  <li>localtunnel</li>
-  <li>shotgun</li>
-  <li>cucumber</li>
-
+  <li>twitter-bootstrap-rails</li>
+  </ul>
+  </li>
 </ul>
 <h4>Contributors</h4>
 <ul>
