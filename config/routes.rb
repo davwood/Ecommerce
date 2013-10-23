@@ -2,7 +2,9 @@ Ecommerce::Application.routes.draw do
     
     devise_for :users
     resources :products 
-    resources :carts
+    resources :carts do
+      post 'remove_item' => "carts#remove_item"
+    end
 
     root 'products#index'
     

@@ -23,13 +23,23 @@ describe 'the cart' do
 		expect(page).to have_css '.cart_total', text: 'Total: 300'
 	end
 
-	it 'can you the details of the products in your cart' do
+	it 'displays products in the cart' do
 		visit product_path(hoy)
 		click_button 'Add to Cart'
 
 		click_link 'My Cart'
 
 		expect(page).to have_css '.cart_details', text: 'Hoy'
+	end
+
+	it 'removes an item' do
+		visit product_path(hoy)
+		click_button 'Add to Cart'
+		click_link 'My Cart'
+
+		click_button 'Remove from cart'
+
+		expect(page).to have_content 'Product Hoy removed'
 	end
 
 end

@@ -46,7 +46,6 @@ describe 'products' do
 		end	
 
 		it 'should be able to update details' do
-
 			visit '/'
 			click_link 'Specialized'
 			click_link 'Edit'
@@ -56,7 +55,6 @@ describe 'products' do
 
 			expect(page).to have_content 'Latest model now available'
 		end
-
 
 		it 'should have an attached file' do
 			Product.create :name => 'Hoy', :description => 'Live the Olympic dream', :price => 300, :product_image => File.open(Rails.root.join("spec", "helpers/images", "pinkbike.jpg"))

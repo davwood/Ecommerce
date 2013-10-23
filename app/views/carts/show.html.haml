@@ -1,13 +1,18 @@
-%ul
-- @cart.each do |product|
-  %li
-  = product.name
-  = product.price
-  = image_tag product.product_image.url(:thumb)
-  .cart_total
-  Total: 
-  = current_cart.total
+%ul{class: 'cart_details'}
+  - @cart.each do |product|
+    %li
+      = product.name
+      = product.price
+      = image_tag product.product_image.url(:thumb)
+      = form_tag cart_remove_item_path(current_cart) do
+        = hidden_field_tag :product_id, product.id
+        = submit_tag 'Remove from cart'
+
+.cart_total
+Total: 
+= current_cart.total
 .links
   = link_to "Continue Shopping", root_path
   = link_to "Checkout", "#"
+
 
