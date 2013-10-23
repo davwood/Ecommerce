@@ -6,5 +6,9 @@ class CartsController < ApplicationController
 
 		redirect_to product_path(product)
 	end
+
+	def show
+		@cart = current_cart.products
+	end
 	
 end
