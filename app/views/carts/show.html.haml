@@ -1,14 +1,13 @@
-
 %ul
 - @cart.each do |product|
-	%li
-	= product.name
-	= product.price
-	= image_tag product.product_image.url(:thumb)
-.cart_total
-	Total: 
-	= current_cart.total
+  %li
+  = product.name
+  = product.price
+  = image_tag product.product_image.url(:thumb)
+  .cart_total
+  Total: 
+  = current_cart.total
 .links
-	= link_to "Continue Shopping", root_path
-	= link_to "Checkout", "#"
+  = link_to "Continue Shopping", root_path
+  = link_to "Checkout", "#"
 

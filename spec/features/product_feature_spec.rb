@@ -61,5 +61,15 @@ describe 'products' do
 			expect(page).to have_css 'img[src*="pinkbike.jpg"]'
 		end
 
+		it 'should delete a product' do
+			Product.create :name => 'Hoy', :description => 'Live the Olympic dream', :price => 300, :product_image => File.open(Rails.root.join("spec", "helpers/images", "pinkbike.jpg"))
+	    visit '/'
+
+	    click_link 'Hoy'
+	    click_link 'Delete'
+
+	    expect(page).to have_content "Product: Hoy deleted"
+	  end
+
 
 end
