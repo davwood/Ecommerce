@@ -65,7 +65,7 @@
       <div class="row">
         <div class="col-lg-9">
           <%= bootstrap_flash %>
-          <p class="notice"><%= notice %></p>
+          <p class="notice"><%= flash[:notice] %></p>
           <p class="alert"><%= alert %></p>
           <div class='item_count'>
             <%= pluralize current_cart.count, 'item' %>
