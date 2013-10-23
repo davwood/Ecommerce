@@ -6,8 +6,10 @@ end
 
 describe 'products' do
 
-	before(:all) do
+	before(:each) do
     	create_product('Specialized','Fast and sleek this bike is good',100.00)
+    	user = User.create(first_name: 'Chris', last_name: 'Hoy', email: 'chrishoy@gmail.com', password: 'chris123', password_confirmation: 'chris123')
+			login_as(user, :scope => :user)
   	end
 		
 		it 'should show a list of products for sale' do
@@ -44,6 +46,7 @@ describe 'products' do
 		end	
 
 		it 'should be able to update details' do
+
 			visit '/'
 			click_link 'Specialized'
 			click_link 'Edit'
