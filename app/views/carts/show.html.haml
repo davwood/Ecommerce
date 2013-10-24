@@ -2,7 +2,7 @@
   - @cart.each do |product|
     %li
       = product.name
-      = product.price
+      = humanized_money_with_symbol(product.price)
       = image_tag product.product_image.url(:thumb)
       = form_tag cart_remove_item_path(current_cart) do
         = hidden_field_tag :product_id, product.id

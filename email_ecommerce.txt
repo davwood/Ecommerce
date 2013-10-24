@@ -1,0 +1,46 @@
+email for ecommerce site
+
+write a test:
+
+order_email_spec.rb
+
+describe 'an order confirmation email' do
+
+  it 'is sent when an order is created' do
+    expect { Order.create(number_of_Items : 3) }.to change { emails.count }.by 1
+
+    # alternative way - but we're creating a helper method, called emails
+    #old_email_count = emails.count
+    #Order.create
+    #expect(emails.count).to eq (old_email_count + 1)
+  end
+
+  it 'should have the subject "Order Confirmation"' do
+    expect(emails.last.subject).to eq "Order Confirmation"
+  end
+
+  it 'should include the nuber of items ordered' do
+    expect(emails.last.body).to match /3 items/
+  end
+
+  it 'should be from "Dave's Bike Store"' do
+
+  end
+
+  it 'should be sent to the order customer' do
+
+  end
+
+end
+
+testing when the order is sent is tricky:
+  could use some stubs or some helper method
+
+first test fails as no model for Order so:
+  rails g model Order number_of_items integer
+
+in Order model, create a hook to send the email, using the after method
+  models can't send emails so in the order method
+
+  rails generate mailer OrderNotifier
+    #this will also create a new views folder for you which is where you'll store the body of the email confirmation message

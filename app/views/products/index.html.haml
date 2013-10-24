@@ -1,5 +1,5 @@
 %p
 - @products.each do |product|
-	= link_to product.name, product_path(product)
-	= image_tag product.product_image.url(:thumb)
-	= product.price
+  = link_to product.name, product_path(product)
+  = image_tag product.product_image.url(:thumb)
+  = humanized_money_with_symbol product.price

@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'aws-sdk'
 
+gem 'money-rails'
+
 gem 'twitter-bootstrap-rails',
      github: 'seyhunak/twitter-bootstrap-rails',
      branch: 'bootstrap3'

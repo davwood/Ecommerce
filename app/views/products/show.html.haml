@@ -1,6 +1,6 @@
 = @product.name
 = @product.description
-= @product.price
+= humanized_money_with_symbol @product.price
 = image_tag @product.product_image.url(:medium)
 
 = form_for current_cart do |f|

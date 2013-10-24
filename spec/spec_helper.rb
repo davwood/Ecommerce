@@ -49,3 +49,7 @@ RSpec.configure do |config|
   config.formatter = :documentation
   config.include Paperclip::Shoulda::Matchers
 end
+
+def emails
+  ActionMailer::Base.deliveries
+end
