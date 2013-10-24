@@ -8,10 +8,11 @@ class CartsController < ApplicationController
   end
 
   def remove_item
-      product = Product.find params[:product_id]
-      current_cart.products.delete(product)
-      flash.notice = "Product #{product.name} removed from cart"
-      render 'show'
+      render :text => params.inspect
+      # product = Product.find params[:product_id]
+      # current_cart.products.delete(product)
+      # flash.notice = "Product #{product.name} removed from cart"
+      # render 'show'
 	end
 
 	def show

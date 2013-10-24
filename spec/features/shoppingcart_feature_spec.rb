@@ -34,6 +34,7 @@ describe 'the cart' do
 
 	it 'removes an item' do
 		visit product_path(hoy)
+		expect(current_cart).not_to be_nil
 		click_button 'Add to Cart'
 		click_link 'My Cart'
 
