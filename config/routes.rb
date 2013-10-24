@@ -2,6 +2,8 @@ Ecommerce::Application.routes.draw do
     
     devise_for :users
     resources :products 
+    resources :charges
+    
     resources :carts do
       post 'remove_item' => "carts#remove_item"
     end

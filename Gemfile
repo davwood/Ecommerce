@@ -47,6 +47,7 @@ end
 gem 'database_cleaner'
 gem 'devise'
 gem 'websocket-rails'
+gem 'stripe'
 
 gem 'haml'
 
