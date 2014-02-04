@@ -1,3 +1,4 @@
+Makers Academy.
 This application is written in Ruby 2.0 using Rails 4.
 <h4>Objective</h4>
 To build an ecommerce site using various gems and the Stripe api for payment processing.
